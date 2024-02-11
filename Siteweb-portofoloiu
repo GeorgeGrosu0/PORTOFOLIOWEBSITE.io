@@ -1,0 +1,650 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+/* elimin de la inceput din tot proiectul toate spatiile degeaba de la html */
+*{
+    padding : 0;
+    margin : 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size : 14px;
+    font-family:'Satisfy' , sans-serif;
+}
+a{  /* stilizez doar linkul  (a href) */
+    text-decoration: none;
+    font-style: italic;
+    
+}
+.container{
+    align-items:center;
+    display:flex;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    font-size: 20px;
+    margin-left: 40px;
+   margin-top:70px;
+} 
+/* Header section ////////////////////////////////////////////////////////////*/
+#header  {
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: auto;
+}
+#header .header {
+	min-height: 8vh;
+	background-color: transparent;
+	transition: 0.3s ease background-color;
+    top: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+#header .nav-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	max-width: 1300px;
+	padding: 0 10px;
+}
+#header .nav-list ul {
+	list-style: none;
+	position: absolute;
+	background-color: rgb(31, 30, 30);
+	width: 100vw;
+	height: 100vh;
+	left: 100%;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	overflow-x: hidden;
+	transition: 0.5s ease left;
+}
+#header .nav-list ul.active {
+	left: 0%;
+}
+#header .nav-list ul a {
+	font-size: 2.5rem;
+	font-weight: 500;
+	letter-spacing: 0.2rem;
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+	padding: 20px;
+	display: block;
+}
+#header .nav-list ul a::after {
+	content: attr(data-after);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	color: rgba(240, 248, 255, 0.021);
+	font-size: 13rem;
+	letter-spacing: 50px;
+	z-index: -1;
+	transition: 0.3s ease letter-spacing;
+}
+#header .nav-list ul li:hover a::after {
+	transform: translate(-50%, -50%) scale(1);
+	letter-spacing: initial;
+}
+#header .nav-list ul li:hover a {
+	color: crimson;
+}
+#header .hamburger {
+	height: 60px;
+	width: 60px;
+	display: inline-block;
+	border: 3px solid white;
+	border-radius: 50%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	cursor: pointer;
+	transform: scale(0.8);
+	margin-right: 20px;
+}
+#header .hamburger:after {
+	position: absolute;
+	content: '';
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	border: 3px solid white;
+	animation: hamburger_puls 1s ease infinite;
+}
+#header .hamburger .bar {
+	height: 2px;
+	width: 30px;
+	position: relative;
+	background-color: white;
+	z-index: -1;
+}
+#header .hamburger .bar::after,
+#header .hamburger .bar::before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	background-color: white;
+	transition: 0.3s ease;
+	transition-property: top, bottom;
+}
+#header .hamburger .bar::after {
+	top: 8px;
+}
+#header .hamburger .bar::before {
+	bottom: 8px;
+}
+#header .hamburger.active .bar::before {
+	bottom: 0;
+}
+#header .hamburger.active .bar::after {
+	top: 0;
+}
+
+
+/* End Header section //////////////////////////////////////////////////*/
+
+
+
+
+
+#hero {
+    background-image: url(./the_painter_of_sunflowers.jpg) ;
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+     z-index: 1;
+}
+
+#hero::after{
+    content: '';
+    position:absolute;
+    left:0;
+    top:0;
+    height: 100%;
+    width:100%;
+    background-color: black;
+    opacity: .7;
+    z-index: -1;
+}
+
+
+#hero h1{
+    color:snow;
+    display:block;
+    width: fit-content;
+   font-size: 4rem;
+   position:relative;
+   
+
+}
+a{
+    color:white;/*  la fel ca cel de mai jos color:*/
+
+}
+#hero .cta {/*  practic fac cum o sa fie patratrlul ce incadreaza portofoliul*/
+    display: inline-block;/* inline-block pt a-i pune dimensiuni la padding etc*/
+    padding: 10px 30px; /* grosime sus-jos respectiv dreapta-stanga */
+    color:white;/* colorez scrisul din interior , la fel ca a{} de mai sus*/
+    background-color:transparent;
+    border: 4px solid crimson;
+    font-size:2rem 443;
+    text-transform: uppercase;
+    letter-spacing: .5rem; /* spatiu intre litere*/
+    transition: .4s ease ;
+    transition-property:background-color,color ;
+
+}
+#hero .cta:hover{/* hoverul este ce pun peste a(PORTOFOLIU) 
+    ,care se aprinde si stinge la apasare  */
+
+background-color: crimson;
+}
+
+ #hero h1 span {
+    position: absolute;
+    background-color: tomato;
+    
+}
+
+#hero .hero{
+    max-width: 1200;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+
+/*/////////////////////////////////////////////////////////////*/
+
+
+#services{
+
+
+}
+
+ #services .services {  /*  cu toate ca teoretic as putea sa iau toata sectiunea,
+                          trebuie sa aleg o minisectiune(portiune) de jos      */
+letter-spacing: .1rem;
+    flex-direction: column;
+    text-align :center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+
+.section-title {
+
+    margin-bottom:50px ;
+    margin-top: 10px;
+    font-size: 4rem;
+    font-weight:3000;
+    color:black;
+    
+}
+
+#services{
+    background-image: url(/alb.jpg);
+    background-position: center;
+    background-size:cover;
+    background-image:linear linear-gradient(60deg , #000000 0%  , #000000 100%);
+z-index: 1;
+
+}
+
+    #services::after {
+        content: '';
+        position:absolute;
+        left:0;
+        top:0;
+        height: 100%;
+        width:100%;
+        background-color: black;
+        opacity: .7;
+        z-index: -1;
+    
+    
+}
+/* asa selectez  un singur element secundar dintr-un 
+alt element dintr-o clasa (span in titlu in sectiune */
+#services .section-title span{
+    color:rgb(44, 175, 179);
+}
+#services .service-item h2 {
+    color: rgb(232, 31, 71); /* Schimbăm culoarea textului */
+    font-size: 22px;}
+    
+#services .service h2 {
+    margin-bottom: 88px ;
+    color: black;
+    font-size: 30px;
+    line-height: 2.8rem;
+    font-weight: 99999;
+    
+}
+
+#services .service-bottom {
+
+display: flex;
+align-items: center;
+justify-content: center;
+flex-wrap: wrap;
+
+}
+
+#services .service-item {
+    flex-basis: 80%; /* ??? */
+    display: flex;
+   align-items: flex-start;
+   justify-content: center;
+   flex-direction: column;
+   padding: 30px; /* spatiu dintre continutul patratului
+                   si marginea exterioara */
+border-radius:10 px;
+margin: 10px  5%;  /* marginea exterioara (da cat de mult se 
+                   departeaza de celelalte obiecte)*/
+color: white;
+background-image: url(./incercare\ 3.jpg);
+z-index: 1;
+background-size: cover;
+position: relative;
+}
+
+#services .service-item::after  {
+
+    content:'';
+    left:0;
+    top: 0;
+    height: 100%;
+    background-image:  linear-gradient(60deg , #282424 0%, #041121 100%);
+    width: 100%; /*latime*/
+    
+    opacity: .8;
+z-index: -1;
+position: absolute;
+}
+
+#service .service-bottom .icon{
+    height:110px;
+    width:80px;
+    margin-bottom: 28px
+    
+}
+
+/*/////////////////////////////////////////////////////////////*/
+/*PROJECTS SECTION*/
+
+#projects .projects{
+flex-direction: column; /* asaza elementele (/divurile) in coloana 
+                           unul dupa altul  */
+}
+
+
+#projects h1 span {
+    color:royalblue;
+    max width 1200px;/* maximul de latime oricat as intinde fereastra este 1200px */
+    margin: 0 auto;
+    padding: 1000px  0; /* top si buttom */
+}
+
+#projects .projects-header h1 {
+
+margin-bottom: 65px;
+
+}
+
+#projects .all-projects{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#projects .project-item{
+
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+width:80%;
+margin:  20px auto;
+overflow: :hidden;
+border-radius: 10px;
+max-width: 2px;
+
+}
+
+#projects .project-info {
+
+    padding: 2px;
+    flex-basis: 50%;
+    height:  100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content:center;
+    flex-direction:column;
+    background-image: linear-gradient(60deg , #29323c  0%,  #485563  100%);
+color:white;
+}
+
+
+#projects .project-info h1 {
+    background-image: url(/the_painter_of_sunflowers.jpg);
+    margin: 10px;
+background-position: center;
+background-size: cover;
+font-size: 40px;
+
+}
+
+#projects{
+    background-image: url();
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    
+}
+   
+   
+    
+
+
+#projects .project-info h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+#projects .project-info p{
+    color: white;
+}
+
+#projects .project-img{
+    flex-basis: 50%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+#projects .project-img:after{
+content: '';
+opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+} 
+/*#projects::after{
+    content: '';
+    position:absolute;
+    left:0;
+    top:0;
+    height: 100%;
+    width:100%;
+    background-color: black;
+    opacity: .3;
+    z-index: -1;
+}
+
+*/
+#projects .project-info{
+    max-width: 900px;
+    font-size: ;
+}
+#projects .project-img{
+    max-width: 900px;
+margin-bottom: 75px;
+margin-bottom: 75px;
+}
+
+#projects .all-projects{
+    margin: 100x;
+    
+    
+    border-radius: 40px;
+}
+#projects .project-item{
+    border-radius: 20px;
+}
+
+#projects .project-img img {
+    transition: .3s ease transform; /* cu ease transform 
+    arat ca ma refer sa pun tranzitia doar la transform: scale de mai jos*/
+}
+#projects .projects-header{
+    font-size: 35px;
+}
+
+
+#projects .project-item:hover .project-img img {
+    
+    transform: scale(1.1);
+
+}
+
+
+span{
+    color: lightcoral;
+}
+
+
+/*  sectiune about/////////////////////////////////////////////*/
+#about{
+    display: flex;
+
+}
+#about.about {
+
+flex-direction: column-reverse;
+text-align: center;
+max-width: 1200px;
+
+
+ /*pun proprietate pentru toata sectiunea , pagina , 
+              aici se pune de obicei */ 
+
+margin: 0 auto; /* marginul se refera la: margin(dimensiune(sus jos) ;dimensiune(dreapta stanga)
+                cand pun 0 la primul adica sus jos =0  si cand pun pe a doua pozitie auto inseamna ca vor fi egale dreapta stanga*/
+            
+padding: 100px 20px; /* (sus jos)  si (dreapta stanga)*/
+
+}
+#about .about-img img {
+width:350px ;    
+height:400px ;
+margin-right: 50px;
+border: 10px solid white ;
+}
+
+#about .col-right{
+    font-size: 35px;
+    text-align: center;
+    letter-spacing: .2rem;
+    max-width: 500px;;
+} 
+#about .col-right h1{
+    letter-spacing: 3px;
+}
+#about  .col-left .about-img {
+    position: relative;
+}
+#about .col-left .about-img::after {
+content: '';
+    border: 7px  solid  rgb(45, 133, 21);
+ height: 98%;
+ margin-top: 20px;
+ right: 100px;
+ width:320px;
+position: absolute;
+z-index: -1;
+
+}
+ 
+
+
+/* //////////////////////////////////////////////////////*/
+
+
+    
+#contact  {
+    display: flex;
+    display: block;
+  margin-left: 40px;
+    
+flex-direction: column;
+}
+    
+
+
+ #contact .container {  /*  cu toate ca teoretic as putea sa iau toata sectiunea,
+    trebuie sa aleg o minisectiune(portiune) de jos      */
+    
+letter-spacing: .1rem;
+flex-direction: column;
+text-align :center;
+max-width: 1500px;
+font-size: 30px;
+padding: 100px 0;
+ }
+
+ #contact .header1 {
+     margin-bottom: 100px;
+     letter-spacing: 5px;
+     font-size:45px;
+   
+ }
+
+ #contact .phone{
+     margin-bottom: 35px;
+     box-shadow: 0px 0px 18px 0 #0000002c;
+     padding: 30px;
+ }
+
+ #contact .email {
+     margin-bottom: 35px;
+     padding: 45px;
+     box-shadow: 0px 0px 18px 0 #0000002c;
+     letter-spacing: 3px;
+ }
+
+ #contact .adress{
+    padding: 40px;
+     box-shadow: 0px 0px 18px 0 #0000002c; 
+     letter-spacing: 2px;
+ }
+ 
+ #contact .container h2{
+
+    font-size: 55px;
+    font-weight:500000 ;
+ }
+
+
+ /*/////////////////////////////////////////////////////////////*/
+ 
+ #footer .container{
+     flex-direction: column;
+     min-height: 200px;
+     background-image: linear-gradient(60deg, #29323c 0% , #485563 100%);
+     margin-left: 0;
+     color: white;
+ }
+ #footer .header{
+     font-size: 27px;
+
+ }
+ #footer .paragraf{
+     letter-spacing: 2px;
+     font-size: 25px;
+ }
+
+
+ @keyframes hamburger_puls{
+     0% {
+         opacity: 1;
+         transform: scale(1);
+     }
+ 
+     100% {
+         opacity: 0;
+         transform: scale(1.4);
+     }
+     
+ }
